@@ -32,7 +32,9 @@ module Parser
     def load_and_discover(file)
       load file
 
-      const_name = file.
+      file_name = File.basename(file)
+
+      const_name = file_name.
         sub(/\.rb$/, '').
         gsub(/(^|_)([a-z])/) do |m|
           "#{$2.upcase}"
